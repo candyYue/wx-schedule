@@ -1,0 +1,7 @@
+<!--pages/chooseoption/chooseoption.wxml-->
+
+<view>
+  <view wx:for="{{list}}"  wx:key="index">
+    <view bindtap="getType" data-val='{{item.value}}'>{{item.value}}</view>
+  </view>
+</view>

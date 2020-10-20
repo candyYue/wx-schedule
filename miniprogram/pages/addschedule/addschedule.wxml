@@ -1,0 +1,45 @@
+<!--pages/addschedule/addschedule.wxml-->
+<view>
+  <text>添加日程</text>
+  <form catchsubmit="formSubmit" catchreset="formReset">
+      <view class="page-section page-section-gap">
+        <input class="weui-input" name="theme" placeholder="请输入日程主题" />
+      </view>
+
+      <view class="section">
+        <view class="section__title">开始时间</view>
+        <picker mode="date" value="{{date}}" name="date" start="2015-09-01" end="2017-09-01" bindchange="bindDateChange">
+          <view class="picker">
+            {{date}}
+          </view>
+        </picker>
+        <picker mode="time" value="{{time}}" name="time" start="09:01" end="21:01" bindchange="bindTimeChange">
+          <view class="picker">
+            {{time}}
+          </view>
+        </picker>
+      </view>
+
+      <view class="page-section page-section-gap">
+        <view class="page-section-title">全天</view>
+        <switch name="switch"/>
+      </view>
+
+      <view class="page-section page-section-gap">
+        <input class="weui-input" name="input" placeholder="日程地点（选填）" />
+      </view>
+      <view class="page-section page-section-gap" bindtap="chooseOption" data-type='reminder'>
+        <view name="reminder" data-value="{{reminder}}">提醒 {{reminder}}<text>></text></view>
+      </view>
+      <view class="page-section page-section-gap" bindtap="chooseOption" data-type='type'>
+        <view name="type" data-value="{{type}}">类型 {{type}}<text>></text></view>
+      </view>
+      <view class="page-section page-section-gap" bindtap="chooseOption" data-type='repeat'>
+        <view name="repeat" data-value='{{repeat}}'>重复 {{repeat}}<text>></text></view>
+      </view>
+
+      <view class="btn-area">
+        <button style="margin: 30rpx 0" type="primary" formType="submit">保存</button>
+      </view>
+    </form>
+</view>
