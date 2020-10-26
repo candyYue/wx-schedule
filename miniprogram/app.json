@@ -1,10 +1,10 @@
 {
   "pages": [
-    "pages/schedule/schedule",
-    "pages/home/home",
-    "pages/index/index",
-    "pages/addschedule/addschedule",
-    "pages/chooseoption/chooseoption"
+    "pages/schedule/schedule'",
+    "pages/home/home'",
+    "pages/addschedule/addschedule'",
+    "pages/chooseoption/chooseoption'",
+    "pages/index/index"
   ],
   "window": {
     "backgroundTextStyle": "light",
@@ -20,13 +20,13 @@
     "backgroundColor": "#000",
     "list": [
       {
-        "pagePath": "pages/schedule/schedule",
+        "pagePath": "pages/home/home",
         "iconPath": "assets/img/schedule.png",
         "selectedIconPath": "assets/img/schedule-active.png",
         "text": "日程"
       },
       {
-        "pagePath": "pages/home/home",
+        "pagePath": "pages/schedule/schedule",
         "iconPath": "assets/img/home.png",
         "selectedIconPath": "assets/img/home-active.png",
         "text": "我的"
