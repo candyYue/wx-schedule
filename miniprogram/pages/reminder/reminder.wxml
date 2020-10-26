@@ -1,5 +1,0 @@
-<!--pages/reminder/reminder.wxml-->
-<view>
-  <!-- <image src="../../assets/img/remdertip.jpg"  class="immediat-img" mode="aspectFit"></image> -->
-  <button type="primary" bindtap="useimmediat">立即使用</button>
-</view>

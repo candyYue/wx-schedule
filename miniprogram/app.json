@@ -3,8 +3,6 @@
     "pages/schedule/schedule",
     "pages/home/home",
     "pages/index/index",
-    "pages/reminder/reminder",
-    "pages/reminderList/reminderList",
     "pages/addschedule/addschedule",
     "pages/chooseoption/chooseoption"
   ],

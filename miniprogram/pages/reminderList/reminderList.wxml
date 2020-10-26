@@ -1,8 +1,0 @@
-<!--pages/reminderList/reminderList.wxml-->
-<view>
-  <view  wx:for="{{reminderlist}}"  wx:key="value" >
-    {{item.value}}
-    {{item.date}}
-    {{item.time}}
-  </view>
-</view>
