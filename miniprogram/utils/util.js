@@ -1,19 +1,57 @@
-const formatTime = date => {
-  const year = date.getFullYear()
-  const month = date.getMonth() + 1
-  const day = date.getDate()
-  const hour = date.getHours()
-  const minute = date.getMinutes()
-  const second = date.getSeconds()
-
-  return [year, month, day].map(formatNumber).join('/') + ' ' + [hour, minute, second].map(formatNumber).join(':')
+const Time = ()=>{
+  this.token = {
+    'YY': 'year',
+    'MM': 'month',
+    'DD': 'day',
+    'hh': 'hour',
+    'mm': 'minute',
+    'ss': 'second'
+  }
+  this.zeroFill = (number) => (+number < 10 ? ('0' + number) : number)
+  this.format = (tmp = 'hh:mm:ss') => {
+    return tmp.replace(/YY|MM|DD|hh|mm|ss/g, (match) => this[this.token[match]])
+  }
 }
 
-const formatNumber = n => {
-  n = n.toString()
-  return n[1] ? n : '0' + n
+const TimeStamp =(value = +new Date() / 1000) =>{
+  Time.call(this, arguments)
+  value = +value * 1000
+  let date = new Date(value)
+  let year = date.getFullYear()
+  let month = date.getMonth() + 1
+  let day = date.getDate()
+  let hour = date.getHours()
+  let minute = date.getMinutes()
+  let sencond = date.getSeconds()
+  this.year = year
+  this.month = this.zeroFill(month)
+  this.day = this.zeroFill(day)
+  this.hour = this.zeroFill(hour)
+  this.minute = this.zeroFill(minute)
+  this.second = this.zeroFill(sencond)
 }
+
+const Duration =(value = 0) =>{
+  Time.call(this, arguments)
+  let second = Math.ceil(value)
+  let hour = Math.floor(second / 3600)
+  let minute = Math.floor(second % 3600 / 60)
+  let sencond = second % 60
+  this.hour = this.zeroFill(hour)
+  this.minute = this.zeroFill(minute)
+  this.second = this.zeroFill(sencond)
+}
+
+const timeStamp = (value) => (tmp) => (value === 0 ? '' : new TimeStamp(value).format(tmp))
+const duration = (value) => (tmp) => new Duration(value).format(tmp)
+
+const formatSecond=(value) => duration(value)('hh:mm:ss')
+const formatTime = (value) => timeStamp(value)('YY-MM-DD hh:mm:ss')
+
 
 module.exports = {
-  formatTime: formatTime
+  timeStamp,
+  duration,
+  formatSecond,
+  formatTime
 }

@@ -1,9 +1,9 @@
 {
   "pages": [
-    "pages/schedule/schedule'",
-    "pages/home/home'",
-    "pages/addschedule/addschedule'",
-    "pages/chooseoption/chooseoption'",
+    "pages/schedule/schedule",
+    "pages/home/home",
+    "pages/addschedule/addschedule",
+    "pages/chooseoption/chooseoption",
     "pages/index/index"
   ],
   "window": {
